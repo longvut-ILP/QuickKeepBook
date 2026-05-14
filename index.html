@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Keep Book | QuickBooks Online & Excel Experts</title>
+    <style>
+        /* Modern Blue Theme */
+        :root {
+            --primary-blue: #003366; /* Deep Professional Blue */
+            --accent-blue: #007bff;  /* Bright Action Blue */
+            --light-blue: #eef6ff;   /* Soft Background Blue */
+            --text-dark: #333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: var(--text-dark);
+            background-color: var(--light-blue);
+        }
+
+        header {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-blue);
+        }
+
+        /* Hero Section with Image */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), 
+                        url('https://images.unsplash.com/photo-1454165833767-027508492021?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero h1 { margin: 0; font-size: 2.8rem; }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Specialization Section */
+        .specialty-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 3rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .specialty-text { flex: 1; min-width: 300px; }
+        .specialty-image { 
+            flex: 1; 
+            min-width: 300px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Services Grid */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 5px solid var(--accent-blue);
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .card h3 { color: var(--primary-blue); }
+
+        /* Contact Details & Form */
+        .contact-box {
+            background: var(--primary-blue);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+        }
+
+        .contact-info-text { margin-bottom: 2rem; text-align: center; }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border: none;
+            border-radius: 4px;
+        }
+
+        button {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        button:hover { background: #0056b3; }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            font-size: 0.85rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Quick Keep Book</h1>
+    <div style="font-weight: 300; opacity: 0.9;">A Division of The Houston IT Solutions, LLC</div>
+</header>
+
+<section class="hero">
+    <h1>Expert Bookkeeping Made Simple</h1>
+    <p>Your local Houston partners for streamlined financials and data accuracy.</p>
+</section>
+
+<div class="container">
+    
+    <div class="specialty-row">
+        <div class="specialty-text">
+            <h2>Our Core Specialty</h2>
+            <p>We don't just "do the books." We specialize in <strong>QuickBooks Online (QBO)</strong> and advanced <strong>Microsoft Excel</strong> data management.  Whether you need a cloud-based setup or complex spreadsheet analysis, we ensure your data is clean, fast, and actionable.</p>
+            <ul style="color: var(--primary-blue); font-weight: bold;">
+                <li>QBO Setup & Maintenance</li>
+                <li>Advanced Excel Reporting</li>
+                <li>Data Cleanup & Migration</li>
+            </ul>
+        </div>
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=500&q=80" alt="Financial Analysis" class="specialty-image">
+    </div>
+
+    <section class="services">
+        <div class="card">
+            <h3>Fast Setup</h3>
+            <p>Get your QuickBooks Online account configured correctly the first time. [cite: 1, 12]</p>
+        </div>
+        <div class="card">
+            <h3>Excel Wizardry</h3>
+            <p>Custom spreadsheets and data analysis to help you see the big picture.</p>
+        </div>
+        <div class="card">
+            <h3>Ongoing Support</h3>
+            <p>Monthly reconciliation and tax-ready reports from our Houston team. [cite: 13]</p>
+        </div>
+    </section>
+
+    <section class="contact-box">
+        <div class="contact-info-text">
+            <h2>Let's Get To Work</h2>
+            <p>📞 <strong>832-856-9995</strong> | ✉️ <strong>quickkeepbook@gmail.com</strong> [cite: 11, 15]</p>
+        </div>
+        
+        <form action="https://formspree.io/f/quickkeepbook@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Contact Name" required>
+            <input type="email" name="_replyto" placeholder="Email Address" required>
+            <textarea name="message" rows="4" placeholder="Tell us about your QuickBooks or Excel needs..." required></textarea>
+            <button type="submit">Send My Request</button>
+        </form>
+    </section>
+</div>
+
+<footer>
+    &copy; 2026 Quick Keep Book. All rights reserved.<br>
+    Quick Keep Book is a <strong>The Houston IT Solutions, LLC</strong> Company. 
+</footer>
+
+</body>
+</html>
