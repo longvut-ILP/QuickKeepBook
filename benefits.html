@@ -164,6 +164,13 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: var(--accent-blue);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
         }
 
         .two-column-image img {
@@ -385,13 +392,15 @@
                 </ul>
             </div>
             <div class="two-column-image">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=500&q=80" alt="Service Business">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=500&q=80" alt="Service Business" onerror="this.style.display='none'">
+                <div style="display:none">💼 Service Business</div>
             </div>
         </div>
 
         <div class="two-column">
             <div class="two-column-image">
-                <img src="https://images.unsplash.com/photo-1555927714806-be57ef1d7eae?auto=format&fit=crop&w=500&q=80" alt="Retail Business">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=500&q=80" alt="Retail Business" onerror="this.style.display='none'">
+                <div style="display:none">🛍️ Retail & E-Commerce</div>
             </div>
             <div class="two-column-text">
                 <h3>For Retail & E-Commerce</h3>
@@ -417,7 +426,8 @@
                 </ul>
             </div>
             <div class="two-column-image">
-                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=500&q=80" alt="Trades Business">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=500&q=80" alt="Trades Business" onerror="this.style.display='none'">
+                <div style="display:none">🔨 Trades Business</div>
             </div>
         </div>
     </section>
