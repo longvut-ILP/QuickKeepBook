@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Quick Keep Book | Meet Your Houston Bookkeeping Team</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        /* Modern Blue Theme */
+        :root {
+            --primary-blue: #003366;
+            --accent-blue: #007bff;
+            --light-blue: #eef6ff;
+            --text-dark: #333;
+            --white: #ffffff;
+            --success-green: #28a745;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-blue);
+        }
+
+        header {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1.5rem 0;
+            border-bottom: 4px solid var(--accent-blue);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .logo-subtitle {
+            font-weight: 300;
+            opacity: 0.9;
+            font-size: 0.85rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 2px;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.85)), 
+                        url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 3rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .two-column-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-blue);
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            margin-top: 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .team-member {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--primary-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .team-info {
+            padding: 1.5rem;
+        }
+
+        .team-info h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.3rem;
+        }
+
+        .team-role {
+            color: var(--accent-blue);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-bio {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            align-items: start;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-year {
+            color: var(--accent-blue);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .timeline-content h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-blue);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-blue);
+            font-style: normal;
+        }
+
+        .testimonial-title {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #0056b3;
+        }
+
+        .contact-box {
+            background: var(--primary-blue);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            font-size: 0.85rem;
+            color: white;
+            background: var(--primary-blue);
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-year {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo">
+            <h1>Quick Keep Book</h1>
+            <div class="logo-subtitle">Houston's Bookkeeping Experts</div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="benefits.html">Benefits</a>
+            <a href="services.html">Services</a>
+            <a href="about.html" style="border-bottom: 2px solid var(--accent-blue); padding-bottom: 2px;">About</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>About Quick Keep Book</h1>
+    <p>Meet the Houston team dedicated to helping your business thrive with clean, organized finances</p>
+</section>
+
+<div class="container">
+    
+    <!-- Our Story -->
+    <section>
+        <h2>Our Story</h2>
+        <div class="two-column">
+            <div>
+                <h3>From Frustration to Solution</h3>
+                <p>Quick Keep Book was founded on a simple observation: small business owners spend too much time fighting with financial records and too little time growing their businesses. We started this company to change that.</p>
+                <p>Our team has spent years working with small businesses across Houston—from restaurants to contractors, e-commerce companies to service providers. We've seen the same pattern again and again: when finances are disorganized, everything else suffers. But when books are clean and accurate, businesses thrive.</p>
+                <p>We're not just accountants or bookkeepers. We're business partners who understand what it takes to build something successful. We've been there ourselves, and we know the challenges you face every single day.</p>
+            </div>
+            <div class="two-column-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=500&q=80" alt="Our Team">
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section>
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h3>Accuracy</h3>
+                <p>We obsess over details because your financial data is critical to every decision you make. Every number matters.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h3>Partnership</h3>
+                <p>You're not a client—you're a partner. We succeed when your business succeeds, and we're invested in your growth.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">⏰</div>
+                <h3>Reliability</h3>
+                <p>You can count on us to show up, follow through, and deliver what we promise. Consistency builds trust.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">📚</div>
+                <h3>Expertise</h3>
+                <p>We stay current with the latest tools, best practices, and industry standards to serve you better.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">💡</div>
+                <h3>Innovation</h3>
+                <p>We constantly look for ways to streamline processes, save you time, and help you work smarter.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🌱</div>
+                <h3>Growth</h3>
+                <p>Your success is our mission. We're here to help you scale, optimize, and build a thriving business.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section>
+        <h2>By The Numbers</h2>
+        <div class="stats">
+            <div>
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Small Businesses Helped</div>
+            </div>
+            <div>
+                <div class="stat-number">12+</div>
+                <div class="stat-label">Years Combined Experience</div>
+            </div>
+            <div>
+                <div class="stat-number">$2M+</div>
+                <div class="stat-label">Tax Savings Found</div>
+            </div>
+            <div>
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Client Retention Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section>
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-image">👩‍💼</div>
+                <div class="team-info">
+                    <h4>Sarah Johnson</h4>
+                    <div class="team-role">Founder & Lead Bookkeeper</div>
+                    <div class="team-bio">CPA with 10+ years of experience in small business accounting. Sarah's passion is helping business owners understand their numbers and make confident decisions.</div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-image">👨‍💻</div>
+                <div class="team-info">
+                    <h4>Michael Chen</h4>
+                    <div class="team-role">QuickBooks Specialist</div>
+                    <div class="team-bio">Advanced QuickBooks certification with expertise in data migration and system optimization. Michael ensures every setup is perfectly configured for efficiency.</div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-image">👩‍🔬</div>
+                <div class="team-info">
+                    <h4>Lisa Rodriguez</h4>
+                    <div class="team-role">Excel Analyst & Consultant</div>
+                    <div class="team-bio">Excel wizard who transforms raw data into actionable insights. Lisa creates custom dashboards that help business owners see opportunities they've been missing.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Houston? -->
+    <section>
+        <h2>Why We Love Serving Houston</h2>
+        <div class="two-column">
+            <div class="two-column-image">
+                <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=500&q=80" alt="Houston Skyline">
+            </div>
+            <div>
+                <h3>A City Built by Entrepreneurs</h3>
+                <p>Houston is a city of hard-working entrepreneurs and business owners. From energy to logistics, retail to construction, this city is built by people who take risks and build businesses.</p>
+                <p>We're Houston natives who understand the Houston business community. We know your challenges, your culture, and what it takes to succeed here. We're not just service providers—we're part of your community.</p>
+                <p>Whether you're in the Energy Corridor, Heights, Midtown, or anywhere else in Houston, we're here to help your business thrive. We offer:</p>
+                <ul style="margin-top: 1rem; list-style: none; padding: 0;">
+                    <li>✓ Local expertise and market knowledge</li>
+                    <li>✓ In-person meetings and consultations</li>
+                    <li>✓ Quick response times (not offshore support)</li>
+                    <li>✓ Understanding of local tax and business regulations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section>
+        <h2>Our Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">2020</div>
+                <div class="timeline-content">
+                    <h4>Quick Keep Book Founded</h4>
+                    <p>Started with a mission to help Houston small businesses organize their finances and grow with confidence.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2021</div>
+                <div class="timeline-content">
+                    <h4>Expanded Team & Services</h4>
+                    <p>Added specialized expertise in Excel analytics and QuickBooks implementation. Began serving 50+ clients across various industries.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2022</div>
+                <div class="timeline-content">
+                    <h4>Industry Recognition</h4>
+                    <p>Recognized as a top bookkeeping service in Houston. Exceeded 100 happy clients and saved them over $1M in taxes.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2023-2024</div>
+                <div class="timeline-content">
+                    <h4>Continued Growth</h4>
+                    <p>Now serving 150+ businesses. Developed proprietary processes for faster, more accurate bookkeeping. Launched specialized consulting services.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2025+</div>
+                <div class="timeline-content">
+                    <h4>Vision for the Future</h4>
+                    <p>Committed to helping more Houston businesses thrive through clean books, strategic insights, and expert guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <div class="testimonial-text">"Quick Keep Book transformed how I manage my restaurant finances. I finally understand my profit margins by menu item and can make real decisions. They found $50K in deductions I was missing!"</div>
+                <div class="testimonial-author">Marcus Williams</div>
+                <div class="testimonial-title">Restaurant Owner</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">"Before Quick Keep Book, I spent 30+ hours every month on bookkeeping. Now they handle everything and I get a beautiful dashboard showing exactly what I need. Best business investment ever."</div>
+                <div class="testimonial-author">Jennifer Lee</div>
+                <div class="testimonial-title">E-Commerce Entrepreneur</div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-text">"As a contractor, I had no idea which jobs were actually profitable. Quick Keep Book showed me I was losing money on small jobs. Changed my entire pricing strategy. Highly recommend!"</div>
+                <div class="testimonial-author">David Martinez</div>
+                <div class="testimonial-title">Construction Contractor</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="contact-box">
+        <h2>Let's Work Together</h2>
+        <p>Ready to experience the difference that professional bookkeeping can make?</p>
+        <a href="services.html" class="cta-button">Explore Our Services →</a>
+        <p style="margin-top: 1.5rem; font-size: 1rem;">📞 <strong>832-856-9995</strong> | ✉️ <strong>quickkeepbook@gmail.com</strong></p>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Quick Keep Book. All rights reserved.</p>
+        <p>Quick Keep Book is a division of <strong>The Houston IT Solutions, LLC</strong></p>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
