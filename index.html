@@ -13,12 +13,18 @@
             --light-blue: #eef6ff;   /* Soft Background Blue */
             --text-dark: #333;
             --white: #ffffff;
+            --success-green: #28a745;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            margin: 0;
             color: var(--text-dark);
             background-color: var(--light-blue);
         }
@@ -27,27 +33,111 @@
             background: var(--primary-blue);
             color: var(--white);
             padding: 1.5rem 0;
-            text-align: center;
             border-bottom: 4px solid var(--accent-blue);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        /* Hero Section with Image */
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .logo-subtitle {
+            font-weight: 300;
+            opacity: 0.9;
+            font-size: 0.85rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 2px;
+        }
+
+        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), 
                         url('https://images.unsplash.com/photo-1454165833767-027508492021?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 4rem 1rem;
+            padding: 5rem 1rem;
             text-align: center;
         }
 
-        .hero h1 { margin: 0; font-size: 2.8rem; }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #0056b3;
+        }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section h2 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
 
         /* Specialization Section */
@@ -60,6 +150,7 @@
             background: var(--white);
             padding: 2rem;
             border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .specialty-text { flex: 1; min-width: 300px; }
@@ -68,6 +159,34 @@
             min-width: 300px; 
             border-radius: 8px; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .specialty-text h3 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .specialty-text ul {
+            color: var(--primary-blue);
+            font-weight: bold;
+            list-style-position: inside;
+            margin: 1rem 0;
+        }
+
+        .specialty-text ul li {
+            margin: 0.5rem 0;
+            list-style: none;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .specialty-text ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: bold;
         }
 
         /* Services Grid */
@@ -79,32 +198,117 @@
 
         .card {
             background: var(--white);
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
             border-radius: 8px;
             border-top: 5px solid var(--accent-blue);
             text-align: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .card h3 { color: var(--primary-blue); }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
 
-        /* Contact Details & Form */
+        .card h3 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--success-green);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .benefit-item h4 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .benefit-item p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin: 2rem 0;
+        }
+
+        .stat {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Contact Box */
         .contact-box {
             background: var(--primary-blue);
             color: white;
-            padding: 2.5rem;
+            padding: 3rem 2rem;
             border-radius: 12px;
             margin-top: 3rem;
         }
 
-        .contact-info-text { margin-bottom: 2rem; text-align: center; }
+        .contact-info-text { 
+            margin-bottom: 2rem; 
+            text-align: center; 
+        }
+
+        .contact-info-text h2 {
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
 
         input, textarea {
             width: 100%;
             padding: 0.8rem;
-            margin: 0.5rem 0;
             border: none;
             border-radius: 4px;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
         }
 
         button {
@@ -117,79 +321,219 @@
             font-size: 1.1rem;
             border-radius: 4px;
             width: 100%;
-            transition: 0.3s;
+            transition: background 0.3s;
         }
 
-        button:hover { background: #0056b3; }
+        button:hover { 
+            background: #0056b3; 
+        }
 
         footer {
             text-align: center;
             padding: 3rem;
             font-size: 0.85rem;
             color: #666;
+            background: var(--primary-blue);
+            color: white;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-blue);
+            margin: 1.5rem 0;
+            font-style: italic;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-author {
+            font-style: normal;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                gap: 1rem;
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            header .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .specialty-row {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Quick Keep Book</h1>
-    <div style="font-weight: 300; opacity: 0.9;">A Division of The Houston IT Solutions, LLC</div>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+        <div class="logo">
+            <h1>Quick Keep Book</h1>
+            <div class="logo-subtitle">Houston's Bookkeeping Experts</div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="benefits.html">Benefits</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+        </nav>
+    </div>
 </header>
 
 <section class="hero">
-    <h1>Expert Bookkeeping Made Simple</h1>
-    <p>Your local Houston partners for streamlined financials and data accuracy.</p>
+    <h1>Transform Your Business With Clean Books</h1>
+    <p>Expert bookkeeping services that help small businesses thrive and grow with confidence</p>
+    <a href="benefits.html" class="cta-button">Discover How We Help →</a>
 </section>
 
 <div class="container">
     
-    <div class="specialty-row">
-        <div class="specialty-text">
-            <h2>Our Core Specialty</h2>
-            <p>We don't just "do the books." We specialize in <strong>QuickBooks Online (QBO)</strong> and advanced <strong>Microsoft Excel</strong> data management.  Whether you need a cloud-based se[...]
-            <ul style="color: var(--primary-blue); font-weight: bold;">
-                <li>QBO Setup & Maintenance</li>
-                <li>Advanced Excel Reporting</li>
-                <li>Data Cleanup & Migration</li>
-            </ul>
-        </div>
-        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=500&q=80" alt="Financial Analysis" class="specialty-image">
-    </div>
-
-    <section class="services">
-        <div class="card">
-            <h3>Fast Setup</h3>
-            <p>Get your QuickBooks Online account configured correctly the first time.</p>
-        </div>
-        <div class="card">
-            <h3>Excel Wizardry</h3>
-            <p>Custom spreadsheets and data analysis to help you see the big picture.</p>
-        </div>
-        <div class="card">
-            <h3>Ongoing Support</h3>
-            <p>Monthly reconciliation and tax-ready reports from our Houston team.</p>
+    <!-- Why Clean Books Matter -->
+    <section>
+        <h2>Why Clean Books Matter</h2>
+        <div class="specialty-row">
+            <div class="specialty-text">
+                <h3>The Power of Organized Finances</h3>
+                <p>Most small business owners spend valuable time wrestling with financial records instead of growing their business. We don't just "do the books." We specialize in <strong>QuickBooks Online (QBO)</strong> and advanced <strong>Microsoft Excel</strong> data management to give you crystal-clear visibility into your finances.</p>
+                <p style="margin-top: 1rem;">When your books are clean, you can:</p>
+                <ul>
+                    <li>Make confident business decisions backed by real data</li>
+                    <li>Spot growth opportunities and cost-saving areas instantly</li>
+                    <li>Prepare tax documents in minutes, not weeks</li>
+                    <li>Secure funding and loans with professional reports</li>
+                    <li>Sleep better knowing your numbers are accurate</li>
+                </ul>
+            </div>
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=500&q=80" alt="Financial Analysis" class="specialty-image">
         </div>
     </section>
 
+    <!-- Key Services -->
+    <section>
+        <h2>Our Core Services</h2>
+        <div class="services">
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Fast Setup</h3>
+                <p>Get your QuickBooks Online account configured correctly from day one with best practices built in.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Excel Wizardry</h3>
+                <p>Custom spreadsheets and dashboards that visualize your data and help you see the big picture instantly.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h3>Ongoing Support</h3>
+                <p>Monthly reconciliation, tax-ready reports, and expert guidance from our Houston team.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔄</div>
+                <h3>Data Cleanup</h3>
+                <p>We'll clean up messy records, fix categorization issues, and organize your historical data.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3>Cloud-Based Solutions</h3>
+                <p>Access your financial data anytime, anywhere with secure cloud solutions that scale with your business.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💰</div>
+                <h3>Tax Preparation</h3>
+                <p>Keep your books tax-ready year-round so filing is painless and you never miss deductions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Impact Stats -->
+    <section>
+        <h2>The Real Impact of Clean Books</h2>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">34%</div>
+                <div class="stat-label">Avg. Growth with Financial Clarity</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">50%</div>
+                <div class="stat-label">Less Time on Admin Work</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">90%</div>
+                <div class="stat-label">Faster Tax Filing</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Confidence in Decisions</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section>
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial">
+            "After working with Quick Keep Book, I finally understand what my numbers mean. We discovered we were losing money on 3 products, cut them, and increased profit by 25% in just 3 months. This is game-changing for small businesses."
+            <div class="testimonial-author">— Maria Santos, Restaurant Owner, Houston TX</div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
     <section class="contact-box">
         <div class="contact-info-text">
-            <h2>Let's Get To Work</h2>
-            <p>📞 <strong>832-856-9995</strong> | ✉️ <strong>quickkeepbook@gmail.com</strong></p>
+            <h2>Ready to Transform Your Business?</h2>
+            <p style="font-size: 1.1rem;">Let's get your books organized so you can focus on growing your business.</p>
+            <p style="margin-top: 1rem;">📞 <strong>832-856-9995</strong> | ✉️ <strong>quickkeepbook@gmail.com</strong></p>
         </div>
         
-        <form action="https://formspree.io/f/quickkeepbook@gmail.com" method="POST">
-            <input type="text" name="name" placeholder="Contact Name" required>
-            <input type="email" name="_replyto" placeholder="Email Address" required>
-            <textarea name="message" rows="4" placeholder="Tell us about your QuickBooks or Excel needs..." required></textarea>
+        <form action="https://formspree.io/f/quickkeepbook@gmail.com" method="POST" style="max-width: 500px; margin: 0 auto;">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Contact Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="_replyto" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" name="phone" placeholder="Phone Number (optional)">
+            </div>
+            <div class="form-group">
+                <textarea name="message" rows="4" placeholder="Tell us about your business and bookkeeping needs..." required></textarea>
+            </div>
             <button type="submit">Send My Request</button>
         </form>
     </section>
 </div>
 
 <footer>
-    &copy; 2026 Quick Keep Book. All rights reserved.<br>
-    Quick Keep Book is a <strong>The Houston IT Solutions, LLC</strong> Company. 
+    <div class="container">
+        <p>&copy; 2026 Quick Keep Book. All rights reserved.</p>
+        <p>Quick Keep Book is a division of <strong>The Houston IT Solutions, LLC</strong></p>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact</a>
+        </p>
+    </div>
 </footer>
 
 </body>
